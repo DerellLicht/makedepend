@@ -1,0 +1,32 @@
+OBJS=cppsetup.o ifparser.o include.o main.o parse.o pr.o
+BIN=makedepend.exe
+
+all: $(BIN)
+
+clean:
+	rm -f $(BIN) *.o
+
+$(BIN): $(OBJS)
+	gcc -Wall -s -O3 $(OBJS) -o $@
+
+cppsetup.o: cppsetup.c
+	gcc -Wall -c -O3 $<
+
+ifparser.o: ifparser.c
+	gcc -Wall -c -O3 $<
+
+include.o: include.c
+	gcc -Wall -c -O3 $<
+
+main.o: main.c
+	gcc -Wall -c -O3 $<
+
+parse.o: parse.c
+	gcc -Wall -c -O3 $<
+
+pr.o: pr.c
+	gcc -Wall -c -O3 $<
+
+# DO NOT DELETE
+
+
